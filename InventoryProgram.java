@@ -27,22 +27,22 @@ public class InventoryProgram {
 				Scanner scan = new Scanner(System.in);
 				String Uresponse = scan.nextLine();
 
-//			Scan items into database
+				// Scan items into database
 				if (Uresponse.equalsIgnoreCase("start scanning")) {
 					scan(conn);
 
 				}
-//			Search for items by barcode
+				// Search for items by barcode
 				if (Uresponse.equalsIgnoreCase("item search")) {
 					Scanner barcodeIn = new Scanner(System.in);
 					long barcode = barcodeIn.nextLong();
 					itemSearch(conn, barcode);
 				}
-//			print total inventory
+				// print total inventory
 				if (Uresponse.equalsIgnoreCase("inventory total")) {
 					inventoryTotal(conn);
 				}
-//			List specific category total
+				// List specific category total
 				if (Uresponse.equalsIgnoreCase("List specific category total")) {
 					System.out.println("what category would you like to see?  ");
 					Scanner catIn = new Scanner(System.in);
@@ -51,7 +51,7 @@ public class InventoryProgram {
 
 				}
 
-//			Add, delete, or change item
+				// Add, delete, or change item
 				if (Uresponse.equals("add item")) {
 					System.out.println(
 							"type in name, cost, barcode, and item category for the item you would like to add.");
@@ -69,7 +69,7 @@ public class InventoryProgram {
 					itemChange(conn);
 				}
 
-//			quit
+				// quit
 				if (Uresponse.equalsIgnoreCase("Quit")) {
 					run = false;
 				}
